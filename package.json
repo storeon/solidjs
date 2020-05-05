@@ -1,0 +1,66 @@
+{
+  "name": "storeon-solidjs",
+  "version": "0.1.0",
+  "description": "A tiny connector for Storeon and Solid.js",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "repository": "git@github.com:distolma/storeon-solidjs.git",
+  "author": "Dmytro Mostovyi <djmakaron2009@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "sideEffects": false,
+  "engines": {
+    "node": ">=8.3.0"
+  },
+  "files": ["index.js", "index.d.ts"],
+  "keywords": [
+    "storeon",
+    "state",
+    "solid-js",
+    "solid"
+  ],
+  "scripts": {
+    "start": "parcel serve example/index.html --open",
+    "lint": "eslint ./*.js",
+    "test": "jest --coverage && yarn lint && size-limit"
+  },
+  "peerDependencies": {
+    "solid-js": "^0.18.0",
+    "storeon": "^2.0.0"
+  },
+  "devDependencies": {
+    "@logux/eslint-config": "^36.1.3",
+    "@size-limit/dual-publish": "^4.5.0",
+    "@size-limit/preset-small-lib": "^4.5.0",
+    "dual-publish": "^0.10.1",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.9.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prefer-let": "^1.0.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-unicorn": "^19.0.1",
+    "jest": "^26.0.0",
+    "size-limit": "^4.5.0",
+    "solid-js": "^0.18.0",
+    "storeon": "^2.0.2"
+  },
+  "size-limit": [
+    {
+      "name": "core",
+      "import": {
+        "index.js": "{ StoreonProvider, useStoreon }"
+      },
+      "limit": "172 B",
+      "ignore": [
+        "solid-js"
+      ]
+    }
+  ],
+  "eslintConfig": {
+    "extends": "@logux/eslint-config"
+  }
+}
