@@ -1,11 +1,11 @@
 # Storeon Solid.js
 
-[![npm version](https://badge.fury.io/js/storeon-solidjs.svg)](https://www.npmjs.com/package/storeon-solidjs)
-[![Build Status](https://travis-ci.org/distolma/storeon-solidjs.svg?branch=master)](https://travis-ci.org/distolma/storeon-solidjs)
+[![npm version](https://badge.fury.io/js/%40storeon%2Fsolidjs.svg)](https://www.npmjs.com/package/@storeon/solidjs)
+[![Build Status](https://travis-ci.org/storeon/solidjs.svg?branch=master)](https://travis-ci.org/storeon/solidjs)
 
 <img src="https://storeon.github.io/storeon/logo.svg" align="right" alt="Storeon logo by Anton Lovchikov" width="160" height="142">
 
-[Solid.js] a declarative, efficient, and flexible JavaScript library for building user interfaces. `storeon-solidjs` package helps to connect store with Solid.js to provide a better performance and developer experience while remaining so tiny.
+[Solid.js] a declarative, efficient, and flexible JavaScript library for building user interfaces. `@storeon/solidjs` package helps to connect store with Solid.js to provide a better performance and developer experience while remaining so tiny.
 
 - **Size**. 172 bytes (+ Storeon itself) instead of ~3kB of Redux (minified and gzipped).
 - **Ecosystem**. Many additional [tools] can be combined with a store.
@@ -19,11 +19,11 @@
 
 ## Install
 ```sh
-npm install -S storeon-solidjs
+npm install -S @storeon/solidjs
 ```
 or
 ```sh
-yarn add storeon-solidjs
+yarn add @storeon/solidjs
 ```
 ## How to use
 
@@ -44,11 +44,11 @@ export const store = createStoreon([counter])
 
 #### `main.js`
 
-Provide store using `StoreonProvider` from `storeon-solidjs`:
+Provide store using `StoreonProvider` from `@storeon/solidjs`:
 
 ```js
 import { render } from 'solid-js/dom'
-import { StoreonProvider } from 'storeon-solidjs'
+import { StoreonProvider } from '@storeon/solidjs'
 import { store } from './store'
 
 render(
@@ -59,12 +59,12 @@ render(
 )
 ```
 
-Import `useStoreon` decorator from `storeon-solidjs`:
+Import `useStoreon` decorator from `@storeon/solidjs`:
 
 #### `Counter.jsx`
 
 ```js
-import { useStoreon } from 'storeon-solidjs'
+import { useStoreon } from '@storeon/solidjs'
 
 export default function Counter() {
   const [state, dispatch] = useStoreon()
@@ -83,7 +83,7 @@ export default function Counter() {
 #### `Counter.tsx`
 
 ```js
-import { useStoreon } from 'storeon-solidjs'
+import { useStoreon } from '@storeon/solidjs'
 import { State, Events } from './store'
 
 export default function Counter() {

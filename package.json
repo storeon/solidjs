@@ -1,10 +1,10 @@
 {
-  "name": "storeon-solidjs",
+  "name": "@storeon/solidjs",
   "version": "0.1.0",
   "description": "A tiny connector for Storeon and Solid.js",
   "main": "index.js",
   "types": "index.d.ts",
-  "repository": "git@github.com:distolma/storeon-solidjs.git",
+  "repository": "git@github.com:storeon/solidjs.git",
   "author": "Dmytro Mostovyi <djmakaron2009@gmail.com>",
   "license": "MIT",
   "private": false,
