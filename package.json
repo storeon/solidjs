@@ -1,6 +1,6 @@
 {
   "name": "@storeon/solidjs",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A tiny connector for Storeon and Solid.js",
   "main": "index.js",
   "types": "index.d.ts",
