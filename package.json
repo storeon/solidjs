@@ -10,7 +10,7 @@
   "private": false,
   "sideEffects": false,
   "engines": {
-    "node": ">=8.3.0"
+    "node": ">=10"
   },
   "files": [
     "index.js",
