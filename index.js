@@ -13,8 +13,8 @@ function StoreonProvider (props) {
   if (process.env.NODE_ENV !== 'production' && !props.store) {
     throw new Error(
       'Could not find store in props. ' +
-      'Please ensure that you pass store to the provider ' +
-      '<StoreonProvider store={store}>'
+        'Please ensure that you pass store to the provider ' +
+        '<StoreonProvider store={store}>'
     )
   }
 
@@ -39,7 +39,7 @@ function useStoreon () {
   if (process.env.NODE_ENV !== 'production' && !store) {
     throw new Error(
       'Could not find storeon context value. ' +
-      'Please ensure the component is wrapped in a <StoreonProvider>'
+        'Please ensure the component is wrapped in a <StoreonProvider>'
     )
   }
 
