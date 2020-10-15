@@ -6984,9 +6984,9 @@ snapdragon@^0.8.1:
     use "^3.1.0"
 
 solid-js@^0.20.1:
-  version "0.20.2"
-  resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-0.20.2.tgz#7bd9bbf1b715ace85ffa7b1aace64656d6f6f2d3"
-  integrity sha512-Bo+9RQtMSg//Ub20PuqKQFLHjHxT0L7lLk6yLzqUVIhHKr7H1SUI4PVgDDqQf5sIp7fw8VwNTRaKuo1RBtuQ7g==
+  version "0.20.3"
+  resolved "https://registry.yarnpkg.com/solid-js/-/solid-js-0.20.3.tgz#98cbe10e48b88dddd7ae76861204e4425d44b716"
+  integrity sha512-hgGddgg/fQ89RmY9ZZs06zcnF0+Fb9l2UdQWELf6D1jRUq4rUxasRIhxmGs8WuyhztifPXngvYsbUCMMrW9EFA==
 
 source-list-map@^2.0.0:
   version "2.0.1"
