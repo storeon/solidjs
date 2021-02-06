@@ -3,9 +3,9 @@ const {
   createState,
   createContext,
   useContext,
-  onCleanup
+  onCleanup,
+  createComponent
 } = require('solid-js')
-const { createComponent } = require('solid-js/dom')
 
 const StoreContext = createContext()
 
