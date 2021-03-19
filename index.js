@@ -20,12 +20,12 @@ function StoreonProvider (props) {
 
   let [state, setState] = createState(props.store.get())
 
-  let undind = props.store.on('@changed', (_, changed) => {
+  let unbind = props.store.on('@changed', (_, changed) => {
     Object.keys(changed).forEach(key => {
       setState(key, reconcile(changed[key]))
     })
   })
-  onCleanup(() => undind())
+  onCleanup(() => unbind())
 
   return createComponent(StoreContext.Provider, {
     value: [state, props.store.dispatch],
