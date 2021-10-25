@@ -1,11 +1,10 @@
 const {
-  reconcile,
-  createState,
   createContext,
   useContext,
   onCleanup,
   createComponent
 } = require('solid-js')
+const { createStore, reconcile } = require('solid-js/store')
 
 const StoreContext = createContext()
 
@@ -18,7 +17,7 @@ function StoreonProvider (props) {
     )
   }
 
-  let [state, setState] = createState(props.store.get())
+  let [state, setState] = createStore(props.store.get())
 
   let unbind = props.store.on('@changed', (_, changed) => {
     Object.keys(changed).forEach(key => {

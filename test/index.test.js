@@ -1,5 +1,6 @@
-const { createRoot } = require('solid-js')
-const { createComponent, render, template, insert } = require('solid-js/dom')
+require('@testing-library/jest-dom')
+const { createRoot, createComponent } = require('solid-js')
+const { render, fireEvent } = require('solid-testing-library');
 const { createStoreon } = require('storeon')
 
 const { useStoreon, StoreonProvider } = require('..')
@@ -11,7 +12,7 @@ it('should provide store', () => {
     return null
   }
   let store = createStoreon([increment])
-  init(store, () => createComponent(Element))
+  init(store, () => <Element />)
 
   expect(storeon[0].count).toEqual(store.get().count)
   expect(storeon[0].started).toEqual(store.get().started)
@@ -20,21 +21,23 @@ it('should provide store', () => {
 
 it('should re-render on store changes', () => {
   function Element () {
-    let [state] = useStoreon()
+    let [state, dispatch] = useStoreon()
 
-    let el = template('<div></div>')
-    insert(el, () => state.count)
-    return el
+    return (
+      <>
+        <span>{state.count}</span>
+        <button role="button" onClick={() => dispatch('inc')} />
+      </>
+    )
   }
 
   let store = createStoreon([increment])
-  let wrapper = init(store, () => createComponent(Element))
+  let { getByText, getByRole } = init(store, () => <Element />)
+  let button = getByRole('button')
 
-  expect(wrapper.textContent).toBe('0')
-  store.dispatch('inc')
-  expect(wrapper.textContent).toBe('1')
-
-  wrapper.innerHTML = ''
+  expect(getByText(/0/)).toBeInTheDocument()
+  fireEvent.click(button)
+  expect(getByText(/1/)).toBeInTheDocument()
 })
 
 it('should unbind on cleanup', () => {
@@ -81,19 +84,10 @@ it('throws if store is not passed to the StoreProvider', () => {
 })
 
 function init (store, children) {
-  return renderIntoContainer(() => createComponent(StoreonProvider, {
-    store,
-    children
-  }))
+  return render(<StoreonProvider store={store} children={children} />)
 }
 
 function increment (store) {
   store.on('@init', () => ({ count: 0, started: true }))
   store.on('inc', state => ({ count: state.count + 1 }))
-}
-
-function renderIntoContainer (component) {
-  let container = document.createElement('div')
-  render(component, container)
-  return container
 }
