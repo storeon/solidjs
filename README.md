@@ -47,7 +47,7 @@ export const store = createStoreon([counter])
 Provide store using `StoreonProvider` from `@storeon/solidjs`:
 
 ```js
-import { render } from 'solid-js/dom'
+import { render } from 'solid-js/web'
 import { StoreonProvider } from '@storeon/solidjs'
 import { store } from './store'
 
