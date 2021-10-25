@@ -1,14 +1,14 @@
-const {
+import {
   createContext,
   useContext,
   onCleanup,
   createComponent
-} = require('solid-js')
-const { createStore, reconcile } = require('solid-js/store')
+} from 'solid-js'
+import { createStore, reconcile } from 'solid-js/store'
 
 const StoreContext = createContext()
 
-function StoreonProvider (props) {
+export function StoreonProvider (props) {
   if (process.env.NODE_ENV !== 'production' && !props.store) {
     throw new Error(
       'Could not find store in props. ' +
@@ -32,7 +32,7 @@ function StoreonProvider (props) {
   })
 }
 
-function useStoreon () {
+export function useStoreon () {
   let store = useContext(StoreContext)
 
   if (process.env.NODE_ENV !== 'production' && !store) {
@@ -44,5 +44,3 @@ function useStoreon () {
 
   return store
 }
-
-module.exports = { StoreonProvider, useStoreon }

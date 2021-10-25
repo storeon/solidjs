@@ -7,7 +7,7 @@
 
 [Solid.js] a declarative, efficient, and flexible JavaScript library for building user interfaces. `@storeon/solidjs` package helps to connect store with Solid.js to provide a better performance and developer experience while remaining so tiny.
 
-- **Size**. 172 bytes (+ Storeon itself) instead of ~3kB of Redux (minified and gzipped).
+- **Size**. 200 bytes (+ Storeon itself) instead of ~3kB of Redux (minified and gzipped).
 - **Ecosystem**. Many additional [tools] can be combined with a store.
 - **Speed**. It tracks what parts of state were changed and re-renders only components based on the changes.
 

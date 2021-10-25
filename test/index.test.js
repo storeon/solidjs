@@ -1,9 +1,9 @@
-require('@testing-library/jest-dom')
-const { createRoot, createComponent } = require('solid-js')
-const { render, fireEvent } = require('solid-testing-library');
-const { createStoreon } = require('storeon')
+import'@testing-library/jest-dom'
+import { createRoot, createComponent } from 'solid-js'
+import { render, fireEvent } from 'solid-testing-library'
+import { createStoreon } from 'storeon'
 
-const { useStoreon, StoreonProvider } = require('..')
+import { useStoreon, StoreonProvider } from '..'
 
 it('should provide store', () => {
   let storeon

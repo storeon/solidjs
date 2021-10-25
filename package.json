@@ -9,8 +9,10 @@
   "license": "MIT",
   "private": false,
   "sideEffects": false,
+  "type": "module",
+  "exports": "./index.js",
   "engines": {
-    "node": ">=10"
+    "node": "^12.0.0 || ^14.0.0 || >=16.0.0"
   },
   "files": [
     "index.js",
@@ -25,7 +27,8 @@
   "scripts": {
     "start": "parcel serve example/index.html --open",
     "lint": "eslint ./*.js",
-    "test": "jest --coverage && yarn lint && size-limit"
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --coverage && yarn lint && size-limit",
+    "publish": "clean-publish"
   },
   "peerDependencies": {
     "solid-js": "^1.0.0",
@@ -35,25 +38,22 @@
     "@babel/cli": "^7.15.7",
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
-    "@logux/eslint-config": "^42.1.0",
-    "@size-limit/dual-publish": "^4.7.0",
-    "@size-limit/preset-small-lib": "^4.7.0",
+    "@logux/eslint-config": "^46.0.0",
+    "@size-limit/preset-small-lib": "^6.0.3",
     "@testing-library/jest-dom": "^5.14.1",
     "babel-preset-solid": "^1.1.7",
-    "dual-publish": "^0.11.0",
-    "eslint": "^7.12.1",
-    "eslint-config-standard": "^16.0.1",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jest": "^24.1.0",
+    "clean-publish": "^3.4.2",
+    "eslint": "^8.1.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jest": "^25.2.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prefer-let": "^1.1.0",
-    "eslint-plugin-prettierx": "^0.14.0",
-    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-promise": "^5.1.1",
     "eslint-plugin-security": "^1.4.0",
-    "eslint-plugin-standard": "^4.0.2",
-    "eslint-plugin-unicorn": "^23.0.0",
+    "eslint-plugin-unicorn": "^37.0.1",
     "jest": "^27.3.1",
-    "size-limit": "^4.7.0",
+    "size-limit": "^6.0.3",
     "solid-jest": "^0.2.0",
     "solid-js": "^1.1.7",
     "solid-testing-library": "^0.2.1",
@@ -65,7 +65,7 @@
       "import": {
         "index.js": "{ StoreonProvider, useStoreon }"
       },
-      "limit": "173 B",
+      "limit": "200 B",
       "ignore": [
         "solid-js"
       ]
